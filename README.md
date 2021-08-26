@@ -1,8 +1,8 @@
 # emotion_recognition_from_speech
 
-The goal of this project was to automatically recognize one of 4 emotion classes (Happy, Angry, Sad, Neutral) from a speech signal. 
+The goal of this project is to train and evaluate a model that would be able to automatically recognize one of 4 emotion classes (Happy, Angry, Sad, Neutral) from a speech signal. Given the assumption that prosody is the main contrubutor to recognizing emotions from speech, all lexical content is disregarded in this project.
 
-Created using the prosodic information of the acoustic signal.
+
 * Mel log filter banks as features (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
 * Feature extraction via Kaldi extension for torchaudio
 * Features padded/cut to a universal shape of 691 frames (mean nr of frames + std)
