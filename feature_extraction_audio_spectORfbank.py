@@ -76,7 +76,7 @@ def get_labels(file):
 	print(f'nr of bad labels: {nr_bl}')
 get_labels(args['labels'])
 
-# Creating a dictionary
+# Creating dataset as dictionary
 dataset_d = {}
 def create_dataset(labels, data):
 	start_time = time.time()
@@ -95,7 +95,7 @@ def create_dataset(labels, data):
 create_dataset(labels, data)
 print(f'original length of dataset was: {len(data)} VS new length of dataset is: {len(dataset_d)}')
 
-# Creating a pandas dataframe
+# Creating pandas dataframe from dictionary
 df = pd.DataFrame.from_dict(dataset_d, orient='index')
 
 # Storing the dataframe

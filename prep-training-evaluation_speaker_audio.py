@@ -139,14 +139,14 @@ print(f'features will be cut/extended to length: {max_len_features}')
 
 # Splitting data according to the 6 original sessions (given the speaker id)
 def create_sessions(df):
-	#features
+	# features
 	f_1 = []
 	f_2 = []
 	f_3 = []
 	f_4 = []
 	f_5 = []
 	f_6 = []
-	#labels (category/activation/valnece depending on the parsed argument)
+	# labels (category/activation/valnece depending on the parsed argument)
 	l_1 = []
 	l_2 = []
 	l_3 = []
@@ -181,7 +181,7 @@ def create_sessions(df):
 
 f, l = create_sessions(df)
 
-#SUPPORT FUNCTIONS FOR THE K-FOLD-SPLIT (SESSION-WISE-SPLIT)
+# SUPPORT FUNCTIONS FOR THE K-FOLD-SPLIT (SESSION-WISE-SPLIT)
 
 # Concatenating with zeros/cutting to length (TAKES: list of ndarrays CONVERTS TO: tensor)
 def zeros(d, m):
@@ -231,7 +231,7 @@ def list_arrays(x):
 	
 	return listed
 
-# Provides insights into the results
+# Provides insights into the data/predictions
 def insight(actual, pred):
 	total = 0
 	actual_dict = {0:0, 1:0, 2:0, 3:0}
