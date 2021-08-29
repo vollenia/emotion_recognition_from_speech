@@ -139,14 +139,14 @@ print(f'features will be cut/extended to length: {max_len_features}')
 
 # Splitting data according to the 6 original sessions (given the speaker id)
 def create_sessions(df):
-	# features
+	# Features
 	f_1 = []
 	f_2 = []
 	f_3 = []
 	f_4 = []
 	f_5 = []
 	f_6 = []
-	# labels (category/activation/valnece depending on the parsed argument)
+	# Labels (category/activation/valnece depending on the parsed argument)
 	l_1 = []
 	l_2 = []
 	l_3 = []
