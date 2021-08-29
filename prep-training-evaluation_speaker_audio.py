@@ -13,7 +13,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from sklearn.metrics import f1_score
 
-# Batch size and epochs
+# Batch size and nr of epochs
 BATCH_SIZE = 128
 EPOCHS = 20
 
@@ -47,7 +47,7 @@ class CNN(nn.Module):
 		x = x.view(-1, self._to_linear) # flattening
 		x = F.relu(self.fc1(x))
 		x = self.drop1(x)
-		x = self.fc2(x)
+		x = self.fc2(x) # output layer therefore no activation
 		return x
 
 # This trains the model
@@ -113,10 +113,10 @@ parser.add_argument("-l", "--label", required=True,
 	help = "type of label to be used (LABEL or ACTIVATION or VALENCE")
 args = vars(parser.parse_args())
 
-# Loading the pandas dataset
+# Loading pandas dataset
 df = pd.read_pickle(args["data"])
 
-# Converting continuous labels (activation/valence) into discrete classes
+# Converts continuous labels (activation/valence) into discrete classes
 def map_to_bin(cont_label):
 	if cont_label <= 2.5:
 		return 0.0
@@ -137,7 +137,7 @@ nr_of_frames = [i.shape[0] for i in df["FEATURES"]]
 max_len_features = int(np.mean(nr_of_frames)+np.std(nr_of_frames))
 print(f'features will be cut/extended to length: {max_len_features}')
 
-# Splitting data according to the 6 original sessions (given the speaker id)
+# Splits data according to the 6 original sessions (given the speaker id)
 def create_sessions(df):
 	# Features
 	f_1 = []
@@ -183,11 +183,11 @@ f, l = create_sessions(df)
 
 # SUPPORT FUNCTIONS FOR THE K-FOLD-SPLIT (SESSION-WISE-SPLIT)
 
-# Concatenating with zeros/cutting to length (TAKES: list of ndarrays CONVERTS TO: tensor)
+# Concatenates with zeros/cutting to length (TAKES: list of ndarrays CONVERTS TO: tensor)
 def zeros(d, m):
 	start_time = time.time()
-	f = torch.stack( # concat along a NEW dim
-		[torch.cat( # concatenation along one of GIVEN dims
+	f = torch.stack( # concatenating along a NEW dim
+		[torch.cat( # concatenating along one of GIVEN dims
 		[
 			torch.Tensor(i[:m]), # takes SLICE of i from 0 to given NR
 			torch.zeros((
@@ -212,7 +212,7 @@ def standardize(features, mean, std):
 	
 	return features
 
-# Splitting validation set into dev and test (least populated class needs to have AT LEAST 2 MEMBERS)
+# Splits validation set into dev and test (least populated class needs to have AT LEAST 2 MEMBERS)
 def SSS(X_val, y_val):
 	sss = StratifiedShuffleSplit(n_splits=1, test_size=0.5)
 	sss.get_n_splits(X_val, y_val)
