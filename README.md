@@ -1,12 +1,14 @@
 # emotion_recognition_from_speech
 
-The goal of this project is to train and evaluate a model that would be able to automatically recognize one of 4 emotion classes (Happy, Angry, Sad, Neutral) from a speech signal. Given the assumption that prosody is the main contrubutor to recognizing emotions from speech, all lexical content is disregarded in this project.
+## Summary
+The goal of this project is to train and evaluate a model that would be able to automatically recognize one of **4 emotion classes** _(Angry, Happy, Neutral, Sad)_ from a speech signal. Given the assumption that prosody is the main contrubutor to recognizing emotions from speech, all lexical content is disregarded in this project.
+(Note: In addition to the **emotion class model** auxiliary models for **activation** and **valence** were trained.)
 
 ## Data
 
 Emotion Class | Count | Percentage
 ------------ | ------------- | ------------- 
-Total | 7,798 | 100.00%
+_Total | 7,798 | 100.00%_
 Angry | 792 | 10.16%
 Happy | 2,644 | 33.91%
 Neutral | 3,477 | 44.59%
