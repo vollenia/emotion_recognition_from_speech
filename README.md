@@ -8,7 +8,7 @@ The goal of this project is to train and evaluate a model that would be able to 
 
 Emotion Class | Count | Percentage
 ------------ | ------------- | ------------- 
-_Total | 7,798 | 100.00%_
+_Total_ | _7,798_ | _100.00%_
 Angry | 792 | 10.16%
 Happy | 2,644 | 33.91%
 Neutral | 3,477 | 44.59%
