@@ -8,7 +8,7 @@ The goal of this project is to train and evaluate a model that would be able to 
 The data consistes of utterances from 12 speakers (6 female / 6 male) collected in 6 dyadic sessions. The vast majority of the data is assumed to be natural and not acted.
 
 Emotion Class | Count | Percentage
------------- | ------------- | ------------- 
+------------ | ------------- | -------------
 _Total_ | _7,798_ | _100.00%_
 Angry | 792 | 10.16%
 Happy | 2,644 | 33.91%
@@ -27,9 +27,16 @@ Sad | 885 | 11.35%
 * Performing training/evaluation in a 6-fold cross validation approach
 
 ## Model Architecture
-
+<p align="center">
+  <img src="images/audio_nn_architecture.jpg" width="35%" />
+</p>
 
 ## Evaluation Results
+|Emotion Class|
+|:-------------------------:|
+|<img src="images/audio_confusion_matrix_label.jpg" width="60%">|
 
-
+Activation             |  Valence
+:-------------------------:|:-------------------------:
+<img src="images/audio_confusion_matrix_activation.jpg" width="100%">  |  <img src="images/audio_confusion_matrix_valence.jpg" width="100%">
 
