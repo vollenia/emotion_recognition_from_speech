@@ -12,8 +12,9 @@ Happy | 2,644 | 33.91%
 Neutral | 3,477 | 44.59%
 Sad | 885 | 11.35%
 
+### Workflow
 
-* Mel log filter banks as features (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
+*  Features: Mel log filter banks as features (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
 * Feature extraction via Kaldi extension for torchaudio
 * Features padded/cut to a universal shape of 691 frames (mean nr of frames + std)
 * Features combined with the labels into a pandas dataframe
