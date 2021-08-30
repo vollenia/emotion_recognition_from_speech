@@ -20,11 +20,11 @@ Sad | 885 | 11.35%
 * Extracting features via Kaldi extension for torchaudio
 * Combining features and labels into a pandas dataframe
 
-### Preprocessing/Training
-* Padding / cutting to a universal shape (mean nr of frames + std)
+### Preprocessing/Training/Evaluation
+* Padding/cutting to a universal shape (mean nr of frames + std)
 * Normalizing via Z-Score (mean=0; std=1)
 * Using a CNN style architecture adapted to time continuous data. Takes a convolution over all features of one or several time steps resulting in a one-dimensional movement of the kernel which corresponds to the movement along the time dimension
-* Performing training / evaluation in a 6-fold cross validation approach
+* Performing training/evaluation in a 6-fold cross validation approach
 
 ### Model
 
