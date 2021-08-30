@@ -15,21 +15,21 @@ Happy | 2,644 | 33.91%
 Neutral | 3,477 | 44.59%
 Sad | 885 | 11.35%
 
-### Feature extraction
+## Feature Extraction
 * Using Mel log filter banks as features (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
 * Extracting features via Kaldi extension for torchaudio
 * Combining features and labels into a pandas dataframe
 
-### Preprocessing/Training/Evaluation
+## Preprocessing/Training/Evaluation
 * Padding/cutting to a universal shape (mean nr of frames + std)
 * Normalizing via Z-Score (mean=0; std=1)
 * Using a CNN style architecture adapted to time continuous data. Takes a convolution over all features of one or several time steps resulting in a one-dimensional movement of the kernel which corresponds to the movement along the time dimension
 * Performing training/evaluation in a 6-fold cross validation approach
 
-### Model
+## Model Architecture
 
 
-## Evaluation results
+## Evaluation Results
 
 
 
