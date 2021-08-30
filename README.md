@@ -5,6 +5,7 @@ The goal of this project is to train and evaluate a model that would be able to 
 (Note: In addition to the **emotion class model** auxiliary models for **activation** and **valence** were trained.)
 
 ## Data
+The data consistes of utterances from 12 speakers (6 female / 6 male) collected in 6 dyadic sessions. The vast majority of the data is assumed to be natural and not acted.
 
 Emotion Class | Count | Percentage
 ------------ | ------------- | ------------- 
@@ -20,10 +21,13 @@ Sad | 885 | 11.35%
 * Combining features and labels into a pandas dataframe
 
 ### Preprocessing/Training
-* Paddeding / cutting to a universal shape (mean nr of frames + std)
+* Padding / cutting to a universal shape (mean nr of frames + std)
 * Normalizing via Z-Score (mean=0; std=1)
-* Using a CNN style architecture adapted to time continuous data. Takes a convolution over all features of one or several time steps resulting in a one-dimensional movement of the kernel which corresponds to the movement along the time dimension. Model's architecture is displayed in Figure X.
+* Using a CNN style architecture adapted to time continuous data. Takes a convolution over all features of one or several time steps resulting in a one-dimensional movement of the kernel which corresponds to the movement along the time dimension
 * Performing training / evaluation in a 6-fold cross validation approach
+
+### Model
+
 
 ## Evaluation results
 
