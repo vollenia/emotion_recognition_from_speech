@@ -16,8 +16,8 @@ Neutral | 3,477 | 44.59%
 Sad | 885 | 11.35%
 
 ## Feature Extraction
-* Using Mel log filter banks as features (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
-* Extracting features via Kaldi extension for torchaudio
+* Using Kaldi extension for torchaudio to extract the features
+* Extracting Mel log filter banks (middle-ground between spectrograms with largre size / redundant information and MFCCs with a high leven of abstraction)
 * Combining features and labels into a pandas dataframe
 
 ## Preprocessing/Training/Evaluation
