@@ -97,7 +97,6 @@ if __name__ == '__main__':
 	data = process_audio(list_of_files, args["features"])
 	
 	# Extracting labels
-	ref = ['anger', 'happiness', 'neutral', 'sadness']
 	labels = get_labels(args['labels'])
 
 	# Creating dataset as dictionary
@@ -105,7 +104,7 @@ if __name__ == '__main__':
 	print(f'original length of dataset was: {len(data)} VS new length of dataset is: {len(dataset_d)}')
 	
 	# Creating pandas dataframe from dictionary
-	df = pd.DataFrame.from_dict(dataset_d, orient='index')
+	dataset_df = pd.DataFrame.from_dict(dataset_d, orient='index')
 	
 	# Storing the dataframe
-	df.to_pickle("df_audio_" + str(args["features"]) +".pkl")
+	dataset_df.to_pickle("df_audio_" + str(args["features"]) +".pkl")
